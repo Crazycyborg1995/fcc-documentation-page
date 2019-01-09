@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
+</head>
+<body>
+    <div id="toggle_icon">
+        <div class="bar-1"></div>
+        <div class="bar-2"></div>
+        <div class="bar-3"></div>
+      </div>
+      <nav id="nav-bar" class="clearfix"> 
+        <div class="logo-wrapper">
+            <img class="react-logo" src="img/react-logo.svg" alt="">
+            <h1>ReactJS Documentation</h1>
+        </div>
+        <ul>
+          <li><a class="nav-link" href="#What_is_ReactJS">What is ReactJS</a></li>
+          <li><a class="nav-link" href="#Introducing_JSX">Introducing JSX</a></li>
+          <li><a class="nav-link" href="#Rendering_Elements">Rendering Elements</a></li>
+          <li><a class="nav-link" href="#Components_and_Props">Components and Props</a></li>
+          <li><a class="nav-link" href="#State_and_Lifecycle">State and Lifecycle</a></li>
+          <li><a class="nav-link" href="#Resources">Resources</a></li>
+        </ul> 
+      </nav>
+     
+      <main id="main-doc" class="clearfix">
+        <section id="What_is_ReactJS" class="main-section">
+          <header>What is ReactJs?</header>
+          <hr>
+          <p>ReactJS is an open-source, component based front end library responsible only for the view layer of the application. It is maintained by Facebook.</p>
+          <p>ReactJS uses virtual DOM based mechanism to fill in data (views) in HTML DOM. The virtual DOM works fast owning to the fact that it only changes individual DOM elements instead of reloading complete DOM every time</p>
+    
+          <blockquote>
+            A React application is made up of multiple components, each responsible for outputting a small,
+            reusable piece of HTML. Components can be nested within other components to allow complex applications to be built out of simple building blocks. A component may also maintain internal state - for example, a TabList component may store a variable corresponding to the currently open tab.
+          </blockquote>
+          <p>Learn how to install and <a href="https://reactjs.org/docs/add-react-to-a-website.html">Add React to your Website</a></p>
+        </section>
+        <section id="Introducing_JSX" class="main-section">
+          <header>Introducing JSX</header>
+          <hr>
+          <h3>Consider this variable declaration:</h3>
+          <code>
+            <p>
+              <span class="pink">const</span> element = <span class="green"><</span><span class="red">h1</span><span class="green">></span>Hello, world!<span class="green"><</span><span class="red">/h1</span><span class="green">></span>
+            </p>
+          </code>
+          <p>This funny tag syntax is neither a string nor HTML.</p>
+          <p>It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React to describe what the UI should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript.</p>
+          <p>React doesn’t require using JSX, but most people find it helpful as a visual aid when working with UI inside the JavaScript code. It also allows React to show more useful error and warning messages.</p>
+        </section>
+        <section id="Rendering_Elements" class="main-section">
+          <header>Rendering Elements</header>
+          <hr>
+          <p>An element describes what you want to see on the screen:</p>
+          <code>
+              <p>
+                <span class="pink">const</span> element = <span class="green"><</span><span class="red"><span class="red">h1</span></span><span class="green">></span>Hello, world!<span class="green"><</span><span class="red"><span class="red">/h1</span></span><span class="green">></span>
+              </p>
+          </code>
+          <p>Unlike browser DOM elements, React elements are plain objects, and are cheap to create. React DOM takes care of updating the DOM to match the React elements.</p>
+          <p>Applications built with just React usually have a single root DOM node. If you are integrating React into an existing app, you may have as many isolated root DOM nodes as you like.</p>
+          <p>To render a React element into a root DOM node, pass both to ReactDOM.render():</p>
+          <code>
+              <p>
+                <span class="pink">const</span> element = <span class="green"><</span><span class="red">h1</span><span class="green">></span>Hello, world!<span class="green"><</span><span class="red">/h1</span><span class="green">></span>
+              </p>
+            <p>ReactDOM.<span class="blue">render</span>(element, document.<span class="blue">getElementById</span><span class="green">('root')</span>);</p>
+          </code>
+          <a class="bg-grey" href="https://reactjs.org/redirect-to-codepen/rendering-elements/render-an-element">Try this on codepen</a>
+        </section>
+        <section id="Components_and_Props" class="main-section">
+          <header>Components and Props</header>
+          <hr>
+          <p>Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. You can find a <a class="bg-blue" href="https://reactjs.org/docs/react-component.html">detailed component API reference here.</a></p>
+          <p>Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.</p>
+          <p>Props are a way to pass information into a React component, they can have any type including functions - sometimes referred to as callbacks.</p>
+          <p>When a React component is created, a number of functions are called:</p>
+            <ul>
+              <li>If you are using <span class="green">React</span>.<span class="red">createClass</span> (ES5), 5 user defined functions are called</li>
+              <li>If you are using <span class="blue">class</span> Component <span class="blue">extends</span> React.Component (ES6), 3 user defined functions are called</li>
+            </ul>  
+          <p>The simplest way to define a component is to write a JavaScript function:</p>
+          <code>
+             <p><span class="pink">function</span> <span class="blue">Welcome</span>(props) {</p> 
+              <p><span class="blue">return</span> <span class="green"><</span><span class="red">h1</span></span><span class="green">></span>Hello, {<span class="blue">props.name</span>}<span class="green"><</span><span class="red">/h1</span></span><span class="green">></span></p> 
+             <p>}</p> 
+          </code>
+          <p>You can also use an ES6 class to define a component:</p>
+          <code>
+            <p><span class="pink">class</span> <span class="orange">Welcome</span> extends <span class="orange">React.Component</span> {</p>
+              <p>&nbsp;<span class="blue">render()</span> {</p>
+                <p>&nbsp;&nbsp;<span class="pink">return</span> <span class="green"><</span><span class="red">h1</span></span><span class="green">></span>Hello, {<span class="blue">props.name</span>}<span class="green"><</span><span class="red">/h1</span></span><span class="green">></span></p> 
+               <p>&nbsp;}</p>
+            <p>}</p>  
+          </code>
+          <p>The above two components are equivalent from React’s point of view.</p>
+        </section>
+        <section id="State_and_Lifecycle" class="main-section">
+          <header>State and Lifecycle</header>
+          <hr>
+          <p>State in React components is essential to manage and communicate data in your application. It is represented as a JavaScript object and has component level scope, it can be thought of as the private data of your component.</p>
+          <p>The primary way that you make UI updates to your React applications is through a call to the <span class="bg-blue">setState()</span> function. This function will perform a shallow merge between the new state that you provide and the previous state, and will trigger a re-render of your component and all decedents.</p>
+          <p>Lifecycle methods are to be used to run code and interact with your component at different points in the components life. These methods are based around a component Mounting, Updating, and Unmounting.</p>
+          <p>For more, <a href="https://reactjs.org/docs/state-and-lifecycle.html">Click here</a>.</p>
+        </section>
+        <section id="Resources" class="main-section">
+          <header>Resources</header>
+          <hr>
+            <ul>
+              <li><a href="https://reactjs.org/docs/getting-started.html">React Docs</a></li>
+              <li><a href="https://reactjs.org/tutorial/tutorial.html">Installation Tutorial</a></li>
+              <li><a href="https://github.com/facebook/react/">Official Github Repo</a></li>
+            </ul>
+        </section>
+      </main>
+<script src="script/script.js"></script>
+</body>
+</html>
