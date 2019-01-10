@@ -137,7 +137,7 @@ code p {
   transform:rotate(-45deg) translateY(-1.4rem) translateX(2px);
 }
 /* Navigation Bar */
-#nav-bar{
+#navbar{
   width: 20%;
   height: 100vh;
   position: fixed;
@@ -156,7 +156,7 @@ code p {
   padding: 1rem;
   border-bottom: thin solid #ccc;
 }
-.logo-wrapper h1{
+.logo-wrapper .title{
   font-size: 2rem;
   margin-top: -2rem;
 }
@@ -165,25 +165,25 @@ code p {
   height: 15rem; 
 }
 
-#nav-bar ul{
+#navbar ul{
   list-style:none;
   padding:0;
   margin-top: 3rem;
 }
-#nav-bar ul li{
+#navbar ul li{
   display: block;
   padding: 1rem;
 }
-#nav-bar .nav-link{
+#navbar .nav-link{
   color: #4CA1BA;
   font-size: 1.6rem;
 }
-#nav-bar .nav-link:active{
+#navbar .nav-link:active{
   color:#fff;
 }
 
 @media (max-width:60rem){
-  #nav-bar{
+  #navbar{
     width: 40%;
   }
   #main-doc{
@@ -191,7 +191,7 @@ code p {
   }
 }
 @media (max-width:35rem){
-  #nav-bar{
+  #navbar{
     left: -100%;
     width: 80%;
     transition: left 300ms ease-out;
